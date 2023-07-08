@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --tw-bg-opacity: 1;
+  background-color: #EEF0F8;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+.text-web-color {
+  color: #134B77;
+}
+.text-web-color-hover {
+  color: #134B77;
+  transition: 0.3s ease-in-out;
+}
+.text-web-color-hover:hover {
+  color: #00B7AA;
+}
+
+
+
+.text-cyan {
+  color: #00B7AA;
+}
+
+.vanila_btn_hover_1 {
+  background: #00B7AA;
+  color: white;
+}
+.vanila_btn_hover_2 {
+  color: white;
+  background: #134B77;
+}
+
+.vanila_btn_hover_1,
+.vanila_btn_hover_2 {
+  transition: all 0.3s ease-in-out;
+}
+
+.vanila_btn_hover_1:hover {
+  background: #134B77;
+}
+
+.vanila_btn_hover_2:hover {
+  background: #00B7AA;
+}
+
+.vanila_underline {
+  height: 0.15rem;
+  width: 4rem;
+  background-color: #00B7AA;
+  transition: all 0.3s ease-in-out;
+}
+
+.vanila_text_hover_1:hover {
+  color: #00B7AA;
+  transition:color 0.3s ease-in-out;
+}
+
+.vanila_bg_color_1 {
+  background: #22547E;
+}
+
+.vanila_bg_color_2 {
+  background: #2D5D85;
+}
+
+.vanila_bg_color_3 {
+  background: #00B7AA;
+}
+
+.vanila_border_color_1 {
+  border-color: #00B7AA;
+}
+
+.myborder{
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+}

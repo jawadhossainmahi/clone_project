@@ -1,0 +1,891 @@
+
+(function($) {
+    "use strict";
+     $(document).on('ready', function() {	
+	
+		/*====================================
+			Country Select JS
+		======================================*/ 
+		$("#country").countrySelect({
+			defaultCountry: "bd",
+			responsiveDropdown: true
+		  });
+	
+		/*====================================
+			Header Sticky JS
+		======================================*/ 
+		jQuery(window).on('scroll', function() {
+			if ($(this).scrollTop() > 200) {
+				$('.header').addClass("sticky");
+			} else {
+				$('.header').removeClass("sticky");
+			}
+		});
+	
+		/*====================================
+			Testimonials Slider JS
+		======================================*/ 
+		$('.testimonials-slider .slider-active').bxSlider({
+            auto:false,
+			autoStart:true,
+			stopAutoOnClick:true,            
+            controls: false,
+            // nextText: '<i class="fa fa-angle-right"></i>',
+            // prevText: '<i class="fa fa-angle-left"></i>',
+            pause: 3500,
+            speed: 600,
+			randomStart: true,
+			mode: 'vertical',
+            pager: true,
+			pagerType: 'full',
+			prevSelector: '.prev-select',
+			nextSelector: '.next-select',
+            pagerCustom: '#products-slider-pager'
+        });
+		
+		
+	
+		/*====================================
+			Mobile Menu JS
+		======================================*/ 
+	
+		$('.navigation').slicknav({
+			prependTo:".mobile-nav",
+			label: '',
+			duration: 0,
+		});
+		
+		$('.toggle').on( "click", function(){
+			$('.toggle').toggleClass('active');
+		});	
+		
+		$('.toggle').on( "click", function(){
+			$('.header-notification').toggleClass('active');
+		});	
+		
+		$('.menu-icon a').on( "click", function(){
+			$('.mobile-menu-slide').toggleClass('active-menu');
+		});	
+		
+		// $( ".header__mega-menu" ).click(
+		  // function() {
+			// $( ".hover-overlay" ).addClass( "hover" );
+		  // }, function() {
+			// $( ".hover-overlay" ).removeClass( "hover" );
+		  // }
+		// );
+		
+		/*====================================
+			Header Sticky JS
+		======================================*/ 
+		jQuery(window).on('scroll', function() {
+			if ($(this).scrollTop() > 100) {
+				$('.hover-overlay').removeClass("hover");
+			} 
+		});
+		
+		// $('.header__mega-menu').on( "click", function(){
+			// $('.hover-overlay').toggleClass('hover');
+		// });	
+		
+		$( "#menu-1" ).click(function() {
+			$( "#menu-active-3,#menu-active-2" ).removeClass( "active" );
+		});
+		$( "#menu-2" ).click(function() {
+			$( "#menu-active-1,#menu-active-3" ).removeClass( "active" );
+		});
+		$( "#menu-3" ).click(function() {
+			$( "#menu-active-1,#menu-active-2" ).removeClass( "active" );
+		});
+	
+	
+		// $( ".header" ).click(function() {
+			// $( this ).addClass( "hover-active" );
+		  // }, function() {
+			// $( this ).removeClass( "hover-active" );
+			
+		  // }
+		// );
+		
+		$(function() {
+			  $("#menu-1").on("click", function(e) {
+				$("#menu-active-1").toggleClass("active");
+				e.stopPropagation()
+			  });
+			  $(document).on("click", function(e) {
+				if ($(e.target).is("#menu-1") === false) {
+				  $("#menu-active-1").removeClass("active");
+				}
+			  });
+			});
+			
+			$(function() {
+				$("#menu-2").on("click", function(e) {
+				  $("#menu-active-2").toggleClass("active");
+				  e.stopPropagation()
+				});
+				$(document).on("click", function(e) {
+				  if ($(e.target).is("#menu-2") === false) {
+					$("#menu-active-2").removeClass("active");
+				  }
+				});
+			});
+		
+			$(function() {
+			  $("#menu-3").on("click", function(e) {
+				$("#menu-active-3").toggleClass("active");
+				e.stopPropagation()
+			  });
+			  $(document).on("click", function(e) {
+				if ($(e.target).is("#menu-3") === false) {
+				  $("#menu-active-3").removeClass("active");
+				}
+			  });
+			});
+			
+
+		/*====================================
+			Header Sticky JS
+		======================================*/ 
+		jQuery(window).on('scroll', function() {
+			if ($(this).scrollTop() > 100) {
+				$('#menu-active-3,#menu-active-1').removeClass("active");
+			} 
+		});
+			
+		
+		
+		/*===============================
+			Checkbox JS
+		=================================*/ 
+		$('input[type="checkbox"]').change(function(){
+			if($(this).is(':checked')){
+				$(this).parent("label").addClass("checked");
+			} else {
+				$(this).parent("label").removeClass("checked");
+			}
+		});
+		
+		
+		/*====================================
+				Nice Select JS
+		======================================*/
+		$('select').niceSelect();
+		
+		
+		/*====================================
+			Counter Js
+		======================================*/ 
+		$('.counter').counterUp({
+			time: 500
+		});
+		
+		/*================================
+			Notification Slider JS
+		==================================*/ 
+		$('.notification-slider').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:20,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			animateOut: "fadeOut",
+			animateIn: "fadeIn",
+			smartSpeed: 2000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+		});	
+		
+		
+		/*================================
+			Product Slider JS
+		==================================*/ 
+		$('.product-sliders').owlCarousel({
+			items:10,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			center:true,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			animateOut: "fadeOut",
+			animateIn: "fadeIn",
+			smartSpeed: 2000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+					margin:20,
+				},
+				480: {
+					items:2,
+					margin:20,
+				},
+				768: {
+					items:3,
+					margin:20,
+				},
+				1170: {
+					items:4,
+				},
+			}
+		});	
+		
+		/*================================
+			Hero Slider JS
+		==================================*/ 
+		$('.hero-area__slider').owlCarousel({
+			items:1,
+			autoplay:true,
+			loop:true,
+			margin:0,
+			touchDrag  : true,
+			mouseDrag  : false,
+			animateOut: "fadeOut",
+			animateIn: "fadeIn",
+			autoplayTimeout:4000,
+			autoplayHoverPause:true,
+			smartSpeed: 2000,
+			merge:true,
+			nav:false,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:true,
+			
+		});	
+
+		var owl = $("#owler").owlCarousel({
+			  responsiveClass:true,
+			  center: true,
+			  loop:true,
+			  autoplay:false,
+			  nav: false,
+			  navText: [
+			  '<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>',
+			  '<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>'
+			  ],
+			  responsive:{
+				0:{
+					items:1,
+					nav:false,
+					center: true,
+					loop:true,
+				},
+				600:{
+					items:1,
+					nav:false,
+					center: true,
+					loop:true,
+				},
+				1000:{
+					items:1,
+					nav:false,
+				   center: true,
+					loop:true,
+				}
+			  }
+			});
+
+		$('.fa-chevron-circle-left').on("click",function(){
+		   $(this).parents('.user-tabs').find('.owl-item.center').prev().find('a').trigger('click')
+		})
+		$('.fa-chevron-circle-right').on("click",function(){
+		  $(this).parents('.user-tabs').find('.owl-item.center').next().find('a').trigger('click')
+		  // alert('hi');
+		})
+		
+		/*================================
+			Product Slider Two JS
+		==================================*/ 
+		$('.product-slider-two').owlCarousel({
+			autoplay:false,
+			 responsiveClass:true,
+			loop:true,
+			margin:5,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:2,
+				},
+				480: {
+					items:3,
+				},
+				768: {
+					items:4,
+				},
+				1170: {
+					items:5,
+				},
+			}
+		});	
+		
+
+		
+		/*================================
+			Explore Product Slider JS
+		==================================*/ 
+		$('.explore-product__menu').owlCarousel({
+			autoplay:false,
+			loop:false,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 300,
+			merge:true,
+			nav:true,			
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:2,
+				},
+				768: {
+					items:3,
+				},
+				1170: {
+					items:4,
+				},
+			}
+		});	
+			
+		/*================================
+			Client Slider JS
+		==================================*/ 
+		$('.client-slider').owlCarousel({
+			autoplay:true,
+			loop:true,
+			margin:5,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:false,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:2,
+				},
+				480: {
+					items:3,
+				},
+				768: {
+					items:4,
+				},
+				1170: {
+					items:5,
+				},
+			}
+		});	
+		
+		/*================================
+			Testimonial JS
+		==================================*/ 
+		$('.testimonial-slider').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:1,
+				},
+				1170: {
+					items:1,
+				},
+			}
+		});	
+		
+		/*================================
+			More Support JS
+		==================================*/ 
+		$('.more-support-slider').owlCarousel({
+			items:4,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:2,
+				},
+				768: {
+					items:2,
+				},
+				1170: {
+					items:3,
+				},
+				1920: {
+					items:4,
+				},
+			}
+		});	
+		
+		/*================================
+			Team JS
+		==================================*/ 
+		$('.team-slider').owlCarousel({
+			items:4,
+			autoplay:false,
+			loop:true,
+			margin:20,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:2,
+				},
+				768: {
+					items:2,
+				},
+				1170: {
+					items:4,
+				},
+			}
+		});	
+		
+		/*================================
+			About Slider JS
+		==================================*/ 
+		$('.about-slider__active').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:0,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:1,
+				},
+				1170: {
+					items:1,
+				},
+			}
+		});	
+		
+		/*================================
+			Company History 
+		==================================*/ 
+		$('.company-history__slider').owlCarousel({
+			items:3,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:2,
+				},
+				1170: {
+					items:3,
+				},
+			}
+		});	
+		
+		/*============================================
+			Casestudy Visual Design Slider JS
+		==============================================*/ 
+		$('.casestudy_visual_slider').owlCarousel({
+			autoplay:false,
+			loop:false,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 300,
+			merge:true,
+			nav:false,			
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:true,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:2,
+				},
+				1170: {
+					items:2,
+				},
+			}
+		});	
+			
+
+		/*============================================
+			Casestudy Card Slider JS
+		==============================================*/ 
+		$('.casestudy_card_slider').owlCarousel({
+			autoplay:false,
+			loop:false,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 300,
+			merge:true,
+			nav:true,			
+			navText: ['<i class="fi-rr-arrow-left" aria-hidden="true"></i>', '<i class="fi-rr-arrow-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:2,
+				},
+				1170: {
+					items:3,
+				},
+			}
+		});	
+			
+
+		/*================================
+			Blog Details Slider
+		==================================*/ 
+		$('.blog-details__single-slider').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:true,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:false,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:2,
+				},
+				1024: {
+					items:1,
+				},
+				1170: {
+					items:1,
+				},
+			}
+		});	
+		
+
+		/*================================
+			Industry Explore Slider Js
+		==================================*/ 
+		$('.industry_explore_slider').owlCarousel({
+			items:2,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:false,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:true,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:2,
+				},
+				1024: {
+					items:2,
+				},
+				1170: {
+					items:2,
+				},
+			}
+		});	
+
+		
+		/*================================
+			CEO Quote Slider Js
+		==================================*/ 
+		$('.ceo_quote_slider').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:false,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:true,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:1,
+				},
+				1024: {
+					items:1,
+				},
+				1170: {
+					items:1,
+				},
+			}
+		});	
+
+		/*================================
+			Industry Explore Slider Js
+		==================================*/ 
+		$('.corporate_life_img_slider').owlCarousel({
+			items:1,
+			autoplay:false,
+			loop:true,
+			margin:30,
+			autoplayTimeout:4000,
+			autoplayHoverPause:false,
+			smartSpeed: 1000,
+			merge:true,
+			nav:false,
+			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+			dots:true,
+			responsive:{
+				300: {
+					items:1,
+				},
+				480: {
+					items:1,
+				},
+				768: {
+					items:1,
+				},
+				1024: {
+					items:1,
+				},
+				1170: {
+					items:1,
+				},
+			}
+		});	
+
+
+		/*====================================
+			Explore Product Tab Slider Js
+		======================================*/ 
+		$('.slider-for').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			fade: true,
+			asNavFor: '.slider-nav',
+			touchMove: false,
+			cssEase: 'ease-out',
+		});
+		  $('.slider-nav').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			asNavFor: '.slider-for',
+			touchMove: false,
+			dots: false,
+			cssEase: 'ease-out',
+			centerMode: true,
+			focusOnSelect: true,
+			prevArrow: '<button class="Prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+			nextArrow: '<button class="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+			responsive: [{
+				breakpoint: 1024,
+				settings: {
+					arrows:true,
+					slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						arrows:true,
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						arrows:true,
+						slidesToShow: 1,
+					}
+				},
+			]
+		});
+
+		 
+		/*====================================
+			Contact Form View Js
+		======================================*/ 
+		$('.extra-arrow').on( "click", function(){
+			$('.call_request-form,.extra-arrow').toggleClass('active');
+		});
+
+		/*=====================================
+			Video Popup
+		======================================*/ 
+		$('.video-popup').magnificPopup({
+			type: 'iframe',
+			removalDelay: 300,
+			mainClass: 'mfp-fade'
+		});
+		
+		/*================================
+			ScrollUp JS
+		==================================*/
+		$.scrollUp({
+			scrollName: 'scrollUp',      // Element ID
+			scrollDistance: 500,         // Distance from top/bottom before showing element (px)
+			scrollFrom: 'top',           // 'top' or 'bottom'
+			scrollSpeed: 1000,            // Speed back to top (ms)
+			animation: 'fade',           // Fade, slide, none
+			animationSpeed: 50,         // Animation speed (ms)
+			scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+			scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+			easing: 'easeInOut',
+			scrollText: ["<i class='fa fa-angle-up'></i>"], // Text for element, can contain HTML
+			scrollTitle: false,          // Set a custom <a> title if required.
+			scrollImg: false,            // Set true to use image
+			activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+			zIndex: 2147483647           // Z-Index for the overlay
+		});		
+		
+		$('.scroll').on('click', function(event) {
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top - 80 
+			}, 1000, 'easeInOutQuart');
+			event.preventDefault();
+		});
+	
+	});
+	
+		/*================================
+			Image Gallery JS
+		==================================*/ 
+		$('#gallary-item').cubeportfolio({
+			filters: '#gallary-nav',
+			loadMoreAction: 'click',
+			defaultFilter: '*',
+			layoutMode: 'grid',
+			animationType: 'quicksand',
+			gapHorizontal: 15,
+			gapVertical: 0,
+			mediaQueries: [{
+				width: 1100,
+				cols: 3,
+			},{
+				width: 768,
+				cols: 3,
+			}, {
+				gridAdjustment: 'responsive',
+			width: 480,
+				cols: 2,
+			},{
+				width: 0,
+				cols: 0,
+			}],
+			caption: 'overlayBottomPush',
+			displayType: 'sequentially',
+			displayTypeSpeed: 80,
+
+
+		});
+		
+	
+		/*====================================
+			Preloader JS
+		======================================*/
+		$(window).on('load', function (event) {
+			$('.preloader').delay(800).fadeOut(500);
+		})
+		
+		
+})(jQuery);
+
+
